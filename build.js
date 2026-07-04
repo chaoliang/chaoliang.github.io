@@ -43,7 +43,7 @@ for (const { path: pagePath, html } of pages) {
   await writeFile(path.join(dir, 'index.html'), html);
 }
 
-for (const asset of ['styles.css', 'app.js']) {
+for (const asset of ['styles.css', 'app.js', 'google388ec71c2649c875.html']) {
   await copyFile(path.join(ROOT, 'public', asset), path.join(DIST, asset));
 }
 
