@@ -1,5 +1,5 @@
 /**
- * DateTally client script. Two jobs, both progressive enhancement:
+ * DateSum client script. Two jobs, both progressive enhancement:
  *  1. Refresh statically-built numbers against the visitor's LOCAL date
  *     (static HTML carries the build-day values; this corrects any lag).
  *  2. Power the interactive calculators (days-between, age).
