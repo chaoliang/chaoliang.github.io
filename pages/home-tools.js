@@ -30,8 +30,8 @@ export function homePage(config, today, buildDate) {
 <section class="calc-panel" aria-labelledby="calc-heading" data-widget="between">
   <h2 id="calc-heading">Days between two dates</h2>
   <form class="calc-form" data-role="form">
-    <label>Start date <input type="date" name="start" required value="${formatISO(today)}"></label>
-    <label>End date <input type="date" name="end" required value="${formatISO(addDays(today, 30))}"></label>
+    <label>Start date <input type="date" lang="en" name="start" required value="${formatISO(today)}"></label>
+    <label>End date <input type="date" lang="en" name="end" required value="${formatISO(addDays(today, 30))}"></label>
     <button type="submit">Calculate</button>
   </form>
   <output class="calc-output" data-role="output" aria-live="polite"></output>
@@ -76,8 +76,8 @@ export function daysBetweenPage(config, today, buildDate) {
 <p class="lede">Pick any two dates and get calendar days, business days, and the weeks breakdown.</p>
 <section class="calc-panel" data-widget="between">
   <form class="calc-form" data-role="form">
-    <label>Start date <input type="date" name="start" required value="${formatISO(today)}"></label>
-    <label>End date <input type="date" name="end" required value="${formatISO(addDays(today, 30))}"></label>
+    <label>Start date <input type="date" lang="en" name="start" required value="${formatISO(today)}"></label>
+    <label>End date <input type="date" lang="en" name="end" required value="${formatISO(addDays(today, 30))}"></label>
     <button type="submit">Calculate</button>
   </form>
   <output class="calc-output" data-role="output" aria-live="polite"></output>
@@ -122,7 +122,7 @@ export function agePage(config, today, buildDate) {
 <p class="lede">Exact age in years, months, and days — plus your age in total days and the countdown to your next birthday.</p>
 <section class="calc-panel" data-widget="age">
   <form class="calc-form" data-role="form">
-    <label>Date of birth <input type="date" name="dob" required max="${formatISO(today)}"></label>
+    <label>Date of birth <input type="date" lang="en" name="dob" required max="${formatISO(today)}"></label>
     <button type="submit">Calculate</button>
   </form>
   <output class="calc-output" data-role="output" aria-live="polite"></output>
