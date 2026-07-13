@@ -10,6 +10,7 @@ import { todayUTC, formatISO } from './lib/dates.js';
 import { dayPage, daysFromTodayIndex } from './pages/days-from-today.js';
 import { businessDayPage, businessDaysIndex, MAX_BUSINESS_N } from './pages/business-days.js';
 import { eventPages } from './pages/days-until.js';
+import { weekPage, monthPage, weeksIndex, monthsIndex, MAX_WEEKS, MAX_MONTHS } from './pages/weeks-months.js';
 import { homePage, daysBetweenPage, agePage } from './pages/home-tools.js';
 import { guidePages } from './pages/guides.js';
 import { legalPages } from './pages/legal.js';
@@ -29,6 +30,10 @@ const pages = [
   agePage(config, today, buildDate),
   ...Array.from({ length: 365 }, (_, i) => dayPage(config, today, buildDate, i + 1)),
   ...Array.from({ length: MAX_BUSINESS_N }, (_, i) => businessDayPage(config, today, buildDate, i + 1)),
+  weeksIndex(config, today, buildDate),
+  monthsIndex(config, today, buildDate),
+  ...Array.from({ length: MAX_WEEKS }, (_, i) => weekPage(config, today, buildDate, i + 1)),
+  ...Array.from({ length: MAX_MONTHS }, (_, i) => monthPage(config, today, buildDate, i + 1)),
   ...eventPages(config, today, buildDate),
   ...guidePages(config, today, buildDate),
   ...legalPages(config, buildDate),

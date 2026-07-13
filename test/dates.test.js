@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {
   dayAnchor, todayUTC, addDays, diffDays, isWeekend, addBusinessDays,
   businessDaysBetween, isLeapYear, daysInMonth, isoWeek, easterSunday,
-  nthWeekdayOfMonth, lastWeekdayOfMonth, formatISO, formatLong,
+  nthWeekdayOfMonth, lastWeekdayOfMonth, addMonths, formatISO, formatLong,
   weeksAndDays, describeWeeks, describeMonths,
 } from '../lib/dates.js';
 
@@ -100,6 +100,16 @@ test('nthWeekdayOfMonth: US Thanksgiving = 4th Thursday of November', () => {
 test('lastWeekdayOfMonth: Memorial Day = last Monday of May', () => {
   assert.equal(formatISO(lastWeekdayOfMonth(2026, 5, 1)), '2026-05-25');
   assert.equal(formatISO(lastWeekdayOfMonth(2027, 5, 1)), '2027-05-31');
+});
+
+test('addMonths clamps to shorter months and crosses years', () => {
+  assert.equal(formatISO(addMonths(dayAnchor(2026, 1, 31), 1)), '2026-02-28');
+  assert.equal(formatISO(addMonths(dayAnchor(2028, 1, 31), 1)), '2028-02-29');
+  assert.equal(formatISO(addMonths(dayAnchor(2026, 8, 31), 1)), '2026-09-30');
+  assert.equal(formatISO(addMonths(dayAnchor(2026, 7, 13), 6)), '2027-01-13');
+  assert.equal(formatISO(addMonths(dayAnchor(2026, 7, 13), 12)), '2027-07-13');
+  assert.equal(formatISO(addMonths(dayAnchor(2024, 2, 29), 12)), '2025-02-28');
+  assert.equal(formatISO(addMonths(dayAnchor(2026, 11, 30), 3)), '2027-02-28');
 });
 
 test('formatting', () => {

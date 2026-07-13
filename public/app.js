@@ -22,6 +22,13 @@ const parseISO = (s) => {
 };
 const addDays = (date, n) =>
   anchor(date.getUTCFullYear(), date.getUTCMonth() + 1, date.getUTCDate() + n);
+const addMonths = (date, n) => {
+  const idx = date.getUTCMonth() + n;
+  const year = date.getUTCFullYear() + Math.floor(idx / 12);
+  const month = ((idx % 12) + 12) % 12 + 1;
+  const lastDay = anchor(year, month + 1, 0).getUTCDate();
+  return anchor(year, month, Math.min(date.getUTCDate(), lastDay));
+};
 const diffDays = (a, b) => Math.round((b - a) / DAY_MS);
 const isWeekend = (d) => d.getUTCDay() === 0 || d.getUTCDay() === 6;
 
@@ -68,8 +75,11 @@ const setFact = (root, name, value) => {
 function refreshOffset(root, today) {
   const n = Number(root.dataset.days);
   if (!Number.isInteger(n) || n < 1) return;
-  const business = root.dataset.mode === 'business';
-  const target = business ? addBusinessDays(today, n) : addDays(today, n);
+  const mode = root.dataset.mode;
+  const business = mode === 'business';
+  const target = business ? addBusinessDays(today, n)
+    : mode === 'months' ? addMonths(today, n)
+    : addDays(today, n);
   const week = isoWeek(target);
 
   setFact(root, 'long-date', fmtLong(target));
@@ -78,11 +88,12 @@ function refreshOffset(root, today) {
   setFact(root, 'iso', fmtISO(target));
   setFact(root, 'weekday', WEEKDAYS[target.getUTCDay()]);
   setFact(root, 'isoweek', `Week ${week.week}, ${week.year}`);
-  if (business) {
+  if (business || mode === 'months') {
     const span = diffDays(today, target);
     setFact(root, 'calspan', String(span));
     setFact(root, 'calweeks', describeWeeks(span));
-  } else {
+  }
+  if (!business) {
     setFact(root, 'weekend', isWeekend(target) ? 'Yes' : 'No');
     setFact(root, 'bizcount', String(businessDaysBetween(today, target)));
   }

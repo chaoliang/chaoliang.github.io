@@ -38,7 +38,7 @@ export function homePage(config, today, buildDate) {
 </section>
 <h2 class="section-title">Days from today</h2>
 <section class="quick-grid" aria-label="Popular counts">${quick}</section>
-<p class="see-all"><a href="/days-from-today/">All counts 1–365 →</a> · <a href="/business-days-from-today/">Business days →</a></p>
+<p class="see-all"><a href="/days-from-today/">All counts 1–365 →</a> · <a href="/business-days-from-today/">Business days →</a> · <a href="/weeks-from-today/">Weeks →</a> · <a href="/months-from-today/">Months →</a></p>
 ${adSlot(config)}
 <h2 class="section-title">Coming up</h2>
 <div class="chip-grid">${countdowns}</div>
