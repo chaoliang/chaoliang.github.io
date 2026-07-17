@@ -12,7 +12,7 @@ const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
 if (urls.length === 0) throw new Error('no URLs found in dist/sitemap.xml');
 const host = new URL(urls[0]).host;
 
-const res = await fetch('https://api.indexnow.org/indexnow', {
+const res = await fetch('https://www.bing.com/indexnow', {
   method: 'POST',
   headers: { 'content-type': 'application/json; charset=utf-8' },
   body: JSON.stringify({
