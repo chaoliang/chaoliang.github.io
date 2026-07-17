@@ -62,7 +62,7 @@ your span, push the date out by one weekday per holiday.</p>`),
     html: page({
       config,
       path: `/business-days-from-today/${n}/`,
-      title: `${n} Business Day${n === 1 ? '' : 's'} From Today – Exact Date | ${config.brand}`,
+      title: `What Date Is ${n} Business Day${n === 1 ? '' : 's'} From Today? – ${config.brand}`,
       description: `${n} business days from today is ${formatLong(target)} (weekends skipped). See the calendar-day equivalent and how the count works.`,
       content,
       faq,

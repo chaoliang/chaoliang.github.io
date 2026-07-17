@@ -1,5 +1,5 @@
 import { addDays, formatMedium, formatISO } from '../lib/dates.js';
-import { page, faqBlock, linksGrid, prose, adSlot, esc } from '../lib/html.js';
+import { page, faqBlock, linksGrid, prose, adSlot, esc, webAppSchema } from '../lib/html.js';
 import { POPULAR_N } from './days-from-today.js';
 import { EVENTS, nextOccurrence } from '../lib/holidays.js';
 
@@ -57,6 +57,8 @@ Start with the <a href="/guides/">guides</a> if you want the rules behind the nu
       description: 'Free date calculators: what date is N days from today, business days from today, days between dates, age calculator, and live holiday countdowns.',
       content,
       buildDate,
+      schema: [webAppSchema(config, '/', 'Date calculator suite',
+        'Days between dates, days from today, business days, age, and live holiday countdowns — computed exactly in your browser.')],
     }),
   };
 }
@@ -103,6 +105,8 @@ ${linksGrid('More tools', [
       content,
       faq,
       buildDate,
+      schema: [webAppSchema(config, '/days-between/', 'Days between dates calculator',
+        'Computes calendar days, business days, and full weeks between any two dates, leap-year exact.')],
     }),
   };
 }
@@ -148,6 +152,8 @@ ${linksGrid('More tools', [
       content,
       faq,
       buildDate,
+      schema: [webAppSchema(config, '/age-calculator/', 'Age calculator',
+        'Exact age in years, months, and days, total days lived, and a live countdown to the next birthday.')],
     }),
   };
 }

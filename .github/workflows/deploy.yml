@@ -32,6 +32,9 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+      - name: Ping IndexNow (Bing) on content pushes
+        if: github.event_name == 'push'
+        run: node scripts/indexnow.mjs
 
   deploy:
     needs: build

@@ -48,7 +48,7 @@ for (const { path: pagePath, html } of pages) {
   await writeFile(path.join(dir, 'index.html'), html);
 }
 
-for (const asset of ['styles.css', 'app.js', 'google388ec71c2649c875.html']) {
+for (const asset of ['styles.css', 'app.js', 'google388ec71c2649c875.html', 'aa3f81c62e074d5f9b27c40d1e85f6a9.txt']) {
   await copyFile(path.join(ROOT, 'public', asset), path.join(DIST, asset));
 }
 
@@ -59,8 +59,25 @@ ${pages.map(({ path: p }) => `<url><loc>${base}${p}</loc><lastmod>${buildDate}</
 </urlset>`;
 await writeFile(path.join(DIST, 'sitemap.xml'), sitemap);
 
-await writeFile(path.join(DIST, 'robots.txt'),
-  `User-agent: *\nAllow: /\n\nSitemap: ${base}/sitemap.xml\n`);
+// AI crawlers explicitly welcome: ChatGPT/Copilot retrieval feeds off Bing,
+// and AI referral traffic converts ~9x organic (research digest, July 2026).
+await writeFile(path.join(DIST, 'robots.txt'), `User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: ${base}/sitemap.xml
+`);
 
 if (config.adsensePublisherId) {
   const pub = config.adsensePublisherId.replace(/^ca-/, '');
