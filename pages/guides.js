@@ -183,6 +183,154 @@ almost always want for personal deadlines.</p>
 let a calculator do the walking: <a href="/days-from-today/">days from today</a>,
 <a href="/business-days-from-today/">business days</a>, or <a href="/days-between/">days between dates</a>.</p>`,
   },
+  {
+    slug: 'net-30-60-90-invoice-payment-terms',
+    title: "Net 30, Net 60, Net 90: How Invoice Payment Terms Really Work",
+    description: "What net 30, net 60, and net 90 really mean: when the clock starts, the 2/10 discount math, late-fee conventions, and how to set terms that get you paid.",
+    body: `
+<p>"Net 30" is the most common payment term on invoices, and one of the most commonly misread. Freelancers tend to read it as "I'll get paid in about a month." Some clients read it as "we'll get to it eventually." The term does have a precise meaning — but the details, like when the clock starts and whether weekends count, depend on what your contract actually says. Here is how the standard terms work, and where the traps are.</p>
+
+<h2>What "net" actually means</h2>
+<p>Net 30 means the full ("net") invoice amount is due within <strong>30 days</strong>. Net 60 and net 90 work the same way with longer windows. By default, those are <strong>calendar days</strong> — weekends and holidays count — unless your contract explicitly says business days. That distinction matters more than it looks: 30 calendar days is about a month, while 30 business days stretches to roughly six weeks once weekends are skipped. If a contract just says "net 30" with no qualifier, the ordinary reading is calendar days. You can check what date lands 30 days out with the <a href="/days-from-today/30/">30 days from today calculator</a>, and if your agreement does count working days, see <a href="/guides/how-to-count-business-days/">how to count business days</a> for the conventions.</p>
+
+<h2>When the clock starts</h2>
+<p>This is where disputes actually happen. "Net 30 from what?" has at least three common answers:</p>
+<ul>
+<li><strong>Invoice date</strong> — the date printed on the invoice. This is the most common default.</li>
+<li><strong>Receipt date</strong> — the date the client received the invoice. Some contracts specify this, which rewards clients for slow inboxes.</li>
+<li><strong>End of month (EOM)</strong> — "net 30 EOM" means 30 days after the end of the month the invoice was issued in. An invoice dated March 3 under net 30 EOM isn't due until April 30.</li>
+</ul>
+<p>There is no universal rule; the contract controls. If your agreement is silent, most businesses treat the invoice date as day zero. The practical fix is simple: don't make anyone do the math. Print the actual due date on the invoice — "Due: August 16, 2026" — right next to the terms.</p>
+
+<h2>Early-payment discounts: the 2/10 net 30 math</h2>
+<p>You'll sometimes see terms like <strong>2/10 net 30</strong>. That means: take a 2% discount if you pay within 10 days; otherwise the full amount is due in 30. On a $1,000 invoice, paying by day 10 costs $980; paying on day 30 costs $1,000. From the client's side, skipping the discount means paying $20 to hold onto $980 for an extra 20 days. Annualized the usual way, that works out to an effective rate of roughly <strong>37%</strong> — far more expensive than most short-term borrowing, which is why finance departments often take the discount. From your side as the seller, offering 2/10 net 30 trades a small haircut for much faster cash. Whether that trade is worth it depends on how badly you need the money now.</p>
+
+<h2>Why net 60 and net 90 squeeze you</h2>
+<p>Longer terms turn you into an interest-free lender. Your costs — software, subcontractors, your own rent — come due immediately, while payment arrives two or three months later. And the real gap is usually longer than the stated term: if you work through a month before invoicing, net 60 means you're paid roughly <strong>90 days</strong> after you started the work. Large companies push net 60 and net 90 precisely because holding cash longer benefits them. You don't have to accept the first number offered: counter with net 30, ask for a deposit or milestone payments, or price the delay into your rate. It also pays to know your real numbers — use the <a href="/days-between/">days between calculator</a> to measure how long each client actually takes from invoice date to payment date. A "net 30" client who reliably pays on day 55 is a net 55 client.</p>
+
+<h2>Late fees and chasing overdue invoices</h2>
+<p>A common convention is a late fee of <strong>1% to 1.5% per month</strong> on overdue balances, but two caveats apply. First, a late fee is generally only enforceable if the client agreed to it in advance — in the contract, not just stamped on the invoice after the fact. Second, the maximum rate you can charge varies by jurisdiction, and some regions (the UK and EU, for example) have statutory interest rules for late commercial payments. Check the rules where you operate rather than assuming. For chasing: send a friendly reminder a few days before the due date, follow up the day after it passes, and escalate in writing at set intervals. A clause letting you pause work on accounts more than 15 or 30 days overdue gives those emails real weight.</p>
+
+<p>Whatever terms you settle on, anchor them to concrete dates instead of leaving clients to count. If your contract runs on calendar days, the <a href="/days-from-today/30/">days from today calculator</a> gives you the exact due date to print on the invoice; if it counts working days, the <a href="/business-days-from-today/30/">business days from today calculator</a> skips weekends for you.</p>`,
+  },
+  {
+    slug: 'return-window-deadlines-explained',
+    title: "Return Windows: How 14, 30, and 90-Day Policies Actually Count",
+    description: "When does a 14, 30, or 90-day return window actually end? How retailers start the clock, why calendar days rule, and how to count your deadline safely.",
+    body: `
+<p>A "30-day return policy" sounds precise until you try to use it. Thirty days from what — the day you ordered, the day it shipped, or the day it landed on your porch? Does the delivery day count as day one? Retailers answer these questions differently, and the difference can be three or four days of real time. If you're deciding whether to keep something, it pays to know exactly which day the window closes.</p>
+
+<h2>When the clock starts</h2>
+<p>For online orders, the window usually starts on the <strong>delivery date</strong>, not the order date. That is the standard in EU consumer law and the stated policy of most large online retailers, and it makes sense: you can't evaluate something you haven't received. For in-store purchases, the clock starts on the <strong>purchase date</strong> printed on the receipt.</p>
+<p>But "usually" is doing real work in that sentence. Some retailers count from the ship date or the order date, and the policy page is the only place you'll find out. If a policy just says "within 30 days" without saying of what, assume the earliest plausible start date and treat the resulting deadline as real. Guessing generously is how returns get refused.</p>
+
+<h2>Calendar days, not business days</h2>
+<p>Return windows almost always run in <strong>calendar days</strong>. Weekends and holidays count, so 14 calendar days is exactly two weeks of real time — not the nearly three weeks that 14 business days would span. This trips people up because plenty of other deadlines — shipping estimates, payroll, some legal and government deadlines — run in business days, where weekends are skipped. If you need that kind of counting, see our guide on <a href="/guides/how-to-count-business-days/">how to count business days</a>.</p>
+<p>Some jurisdictions extend a deadline that lands on a weekend or public holiday to the next working day, but retailer policies rarely spell this out. The safe assumption: the last day is the last day, whatever day of the week it falls on.</p>
+
+<h2>What 14, 30, and 90 days typically mean</h2>
+<p>The common window lengths aren't arbitrary:</p>
+<ul>
+<li><strong>14 days</strong> is the statutory minimum for most online purchases in the EU and UK. Distance-selling rules give consumers 14 days from delivery to withdraw from the purchase, no reason required. Retailers can offer more; they can't offer less. Exceptions exist — personalized items, perishables, unsealed hygiene products — so treat it as a strong default, not an absolute.</li>
+<li><strong>30 days</strong> is the typical window in US retail. Note the word "typical": there is no general US federal law requiring stores to accept returns at all. Thirty days is convention, set policy by policy.</li>
+<li><strong>90 days</strong> is commonly offered by some big-box chains on general merchandise. Even at those stores, categories like electronics, phones, and major appliances often carry shorter windows — 14 or 30 days — inside the same policy.</li>
+</ul>
+<p>The pattern to remember: the window belongs to the retailer (or, in the EU, to the law), and category exceptions are everywhere. Read the line that covers what you actually bought.</p>
+
+<h2>Receipts, condition, and holiday extensions</h2>
+<p>Hitting the date is necessary but not sufficient. Most policies also require proof of purchase — a receipt, order confirmation, or, at many chains, a lookup from the card you paid with — and impose condition requirements: tags attached, original packaging, software unopened. Opened electronics sometimes come back minus a restocking fee. None of this is universal; all of it is common.</p>
+<p>One helpful wrinkle: many retailers extend return windows for holiday purchases. Items bought in November and December often get a deadline pushed into mid- or late January, so a gift bought in late November isn't stuck with a Christmas-week deadline. The exact cutoff dates change from year to year, so verify rather than assume.</p>
+
+<h2>How to actually count your deadline</h2>
+<p>Two habits prevent nearly all missed returns:</p>
+<ul>
+<li><strong>Count from the day after delivery.</strong> Treat the delivery day as day zero. This matches how EU withdrawal periods are counted and is the conservative reading of most US policies. If the package arrived March 3 with a 30-day window, day 30 is April 2.</li>
+<li><strong>Set a reminder three days before the deadline.</strong> Not on the deadline — three days out. That leaves time to repackage the item, print a label, and get it to a drop-off point. Policies vary on whether a return must be initiated, postmarked, or received by the deadline, and three days of slack covers the strictest reading.</li>
+</ul>
+
+<p>The counting itself doesn't need to be mental math. If your package arrived today, <a href="/days-from-today/14/">14 days from today</a>, <a href="/days-from-today/30/">30 days from today</a>, and <a href="/days-from-today/90/">90 days from today</a> give you the exact calendar date your window closes — put the date three days earlier in your phone and forget about it.</p>`,
+  },
+  {
+    slug: 'pregnancy-weeks-to-months',
+    title: "Pregnancy Weeks to Months: How the 40-Week Calendar Works",
+    description: "Why pregnancy is counted as 40 weeks from the last period, how weeks map to months and trimesters, and how a due date is calculated with Naegele's rule.",
+    body: `
+<p>Pregnancy is measured in weeks, but everyone around you asks in months, and the two systems refuse to line up neatly. A pregnancy is <strong>40 weeks</strong>, yet everyone calls it nine months — and 40 weeks divided by four is ten. The confusion is not your arithmetic. It comes from where the count starts, what a "month" means, and the difference between a four-week month and a calendar month. Here is how the 40-week calendar actually works. One note before we start: this is general information about how dates are counted, not medical advice — questions about your own pregnancy belong with your doctor or midwife.</p>
+
+<h2>The clock starts before conception</h2>
+<p>Pregnancy weeks are counted from the <strong>first day of the last menstrual period (LMP)</strong> — not from conception. That sounds odd, because for roughly the first two weeks of the count, there is no pregnancy yet. Conception typically happens around ovulation, about <strong>two weeks after</strong> the LMP in a textbook 28-day cycle.</p>
+<p>The reason is practical: most people know the date their last period started, while the exact date of conception is usually unknowable. So medicine standardized on the date everyone can actually point to. The consequence is a built-in two-week offset:</p>
+<ul>
+<li>"<strong>4 weeks pregnant</strong>" means roughly 2 weeks after conception — often right when a test first turns positive.</li>
+<li>"12 weeks pregnant" means roughly 10 weeks of actual embryonic development.</li>
+</ul>
+<p>Every number in this article uses that LMP-based count, because that is what clinicians, apps, and ultrasound reports generally use.</p>
+
+<h2>Why 40 weeks is not 10 months — or exactly 9</h2>
+<p>Forty weeks is <strong>280 days</strong>. If you count in <strong>28-day months</strong> — four weeks apiece, often called "lunar months" in older obstetric tradition, though an astronomical lunar month is actually closer to 29.5 days — 280 days is exactly 10 of them, which is where "ten months" traditions come from. But calendar months average about 30.4 days, so 280 days works out to roughly <strong>9 calendar months plus about a week</strong>.</p>
+<p>That is why "nine months" and "40 weeks" both circulate and both are approximately right. It is also why there is no clean weeks-to-months conversion chart: a calendar month is about 4.3 weeks, not 4. If you want a rough month figure, divide the week number by 4.3 — week 26 is about six months along, not six and a half.</p>
+
+<h2>Trimester boundaries</h2>
+<p>Pregnancy is conventionally split into three trimesters. A common division is:</p>
+<ul>
+<li><strong>First trimester:</strong> weeks 1–12</li>
+<li><strong>Second trimester:</strong> weeks 13–27</li>
+<li><strong>Third trimester:</strong> week 28 until delivery</li>
+</ul>
+<p>Be aware that the exact cut points vary by source — some place the end of the first trimester at week 13 or 14, and the second-to-third boundary is sometimes drawn at week 27 or 28. The boundaries are conventions for organizing care and milestones, not biological switches, so do not be surprised if your clinic's dates differ slightly from an app's. If you are trying to see when a boundary lands on a real calendar, a page like <a href="/weeks-from-today/12/">12 weeks from today</a> converts the week count into an actual date instantly.</p>
+
+<h2>Preterm, early term, and full term</h2>
+<p>The weeks near the end are graded more finely, because the distinctions matter clinically:</p>
+<ul>
+<li><strong>Preterm:</strong> birth before 37 weeks</li>
+<li><strong>Early term:</strong> 37 through 38 weeks</li>
+<li><strong>Full term:</strong> 39 through 40 weeks</li>
+<li><strong>Late term:</strong> week 41, and <strong>postterm</strong> from 42 weeks</li>
+</ul>
+<p>These categories were tightened by obstetric organizations precisely because 37 weeks and 40 weeks are not equivalent — "term" was redefined so that <strong>full term means 39–40 weeks</strong>, not simply "made it to 37."</p>
+
+<h2>The due date is a calculation, not a promise</h2>
+<p>The classic method is <strong>Naegele's rule</strong>: take the first day of the LMP and add <strong>280 days</strong>. The traditional shortcut — add one year, subtract three months, add seven days — usually lands on the same date, though it can drift by a day or two because calendar months are not all the same length and leap years interfere (a classic example of the pitfalls covered in our guide to <a href="/guides/leap-years-and-date-math-pitfalls/">leap years and date math</a>). The rule assumes a 28-day cycle with ovulation on day 14; if your cycles run longer or shorter, the estimate shifts, which is one reason a first-trimester ultrasound is often used to confirm or adjust the date.</p>
+<p>Either way, the due date is the midpoint of a range, not an appointment. Only a small minority of babies arrive on the exact date; arriving a week or two on either side of it is entirely ordinary. Treat the due date as the center of a window rather than a deadline to plan around to the day.</p>
+
+<p>If you want to run the numbers yourself, DateSum's calculators handle the tedious part. Enter the first day of the LMP into the <a href="/days-between/">days between dates calculator</a> to see exactly how many days — and therefore weeks — have elapsed, or jump straight to <a href="/weeks-from-today/40/">40 weeks from today</a> to see where a full 280-day count lands on the calendar.</p>`,
+  },
+  {
+    slug: 'billing-cycles-explained',
+    title: "Billing Cycles: Why 'Monthly' Isn't Always 30 Days",
+    description: "Why monthly billing runs 28-31 days: calendar-month renewals, date clamping, credit card grace periods, proration, and honest annual-vs-monthly price math.",
+    body: `
+<p>Sign up for a subscription on January 31 and the next charge usually arrives on <strong>February 28</strong> — a 28-day cycle. The charge after that might land on March 28 or March 31, depending on how the biller handles short months. "Monthly" billing almost never means "every 30 days." It means once per calendar month, and calendar months run <strong>28 to 31 days</strong>. That three-day spread explains most of the small surprises people find on their statements.</p>
+
+<h2>"Monthly" means calendar months, not 30 days</h2>
+<p>Most subscriptions anchor your billing date to the calendar day you signed up. Join on the 15th and you are charged on the 15th of every month. The gap between charges is 28, 29, 30, or 31 days depending on which month you are crossing — the biller does not care that the intervals are unequal, only that the date matches.</p>
+<p>The complication is short months. There is no February 31, so a renewal anchored to the 31st gets clamped: it lands on February 28 (or February 29 in a leap year). What happens next varies by service. Many billers remember the original anchor and snap back to the 31st in March; others quietly reset your billing day to the 28th going forward. If your renewal date seems to have drifted, a February clamp is the usual culprit.</p>
+
+<h2>Credit cards work differently: statement cycles plus a grace period</h2>
+<p>Credit cards do not renew anything — they cut a statement at the end of each billing cycle, and those cycles are typically a fixed length somewhere between <strong>28 and 31 days</strong>, closing around the same day each month. Two dates matter, and they are not the same:</p>
+<ul>
+<li><strong>Statement close date</strong> — the day the cycle ends and your balance is totaled.</li>
+<li><strong>Payment due date</strong> — the deadline to pay. In the United States, issuers must set it at least <strong>21 days</strong> after the statement is sent.</li>
+</ul>
+<p>The window between those dates is the grace period. On most cards, if you pay the full statement balance by the due date, purchases in that cycle accrue no interest (cash advances usually get no grace period at all — check your card's terms). One practical consequence: a purchase made the day after your statement closes rides the entire next cycle plus the grace period, so it can go roughly seven weeks before payment is actually due.</p>
+
+<h2>How to compare annual vs monthly pricing</h2>
+<p>The honest comparison is simple: multiply the monthly price by <strong>12</strong> and put it next to the annual price. Twelve monthly charges cover a full year — 365 or 366 days — exactly like one annual charge does. A $10/month plan costs $120 per year; if the annual plan is $100, you save $20, about 17%.</p>
+<p>The mistake to avoid is treating a month as 30 days and computing "30 × 12 = 360 days" or a daily rate of price ÷ 30. That framework overstates the monthly plan's cost, because a real year of monthly billing buys you 365 days, not 360. The error is small — a percent or two — but it is a made-up number when the real one is just as easy to calculate.</p>
+
+<h2>Prorated charges when you start mid-cycle</h2>
+<p>Some services bill everyone on a fixed date — the 1st of the month is common — instead of your signup anniversary. Join on the 20th and your first charge is prorated: you pay for the days remaining in the current cycle, then the full price on the next cycle date. The usual formula is days remaining ÷ days in the month × the monthly price, which means the per-day rate itself changes with the month's length. Upgrades work the same way on many platforms: you get a credit for the unused portion of the old plan and a prorated charge for the new one. A first invoice that looks "wrong" is very often just proration doing its job.</p>
+
+<h2>Practical habits that prevent billing surprises</h2>
+<ul>
+<li><strong>Know your exact dates.</strong> "Around the 15th" is not a date. Find the renewal date in the account settings and the statement close date on your card.</li>
+<li><strong>Align renewals with payday.</strong> Many services let you change the billing date; moving renewals to just after payday smooths cash flow.</li>
+<li><strong>Cancel with a buffer.</strong> Renewals fire at a specific instant, not at the end of the renewal day — and some services process them at the start of that day in their own time zone, often UTC. Policies vary, so cancel at least a full day early rather than testing the deadline.</li>
+<li><strong>Watch February.</strong> Anything anchored to the 29th, 30th, or 31st will get clamped, and services differ on whether the date bounces back afterward.</li>
+</ul>
+
+<p>When the exact date matters — a trial ending, a renewal you intend to cancel, a prorated first invoice you want to check — count it rather than estimate it. Use the <a href="/months-from-today/1/">one month from today</a> calculator to see where your next renewal actually lands, <a href="/months-from-today/12/">12 months from today</a> for an annual plan, and the <a href="/days-between/">days between dates</a> calculator to verify how long a specific cycle really ran.</p>`,
+  },
 ];
 
 export function guidePages(config, today, buildDate) {
