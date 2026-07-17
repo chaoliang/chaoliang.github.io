@@ -7,6 +7,7 @@ import { mkdir, writeFile, readFile, copyFile, rm } from 'node:fs/promises';
 import path from 'node:path';
 
 import { todayUTC, formatISO } from './lib/dates.js';
+import { robotsTxt, llmsTxt } from './lib/geo.js';
 import { dayPage, daysFromTodayIndex } from './pages/days-from-today.js';
 import { businessDayPage, businessDaysIndex, MAX_BUSINESS_N } from './pages/business-days.js';
 import { eventPages } from './pages/days-until.js';
@@ -59,25 +60,11 @@ ${pages.map(({ path: p }) => `<url><loc>${base}${p}</loc><lastmod>${buildDate}</
 </urlset>`;
 await writeFile(path.join(DIST, 'sitemap.xml'), sitemap);
 
-// AI crawlers explicitly welcome: ChatGPT/Copilot retrieval feeds off Bing,
-// and AI referral traffic converts ~9x organic (research digest, July 2026).
-await writeFile(path.join(DIST, 'robots.txt'), `User-agent: *
-Allow: /
-
-User-agent: GPTBot
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-Sitemap: ${base}/sitemap.xml
-`);
+// GEO plumbing: 17 AI crawlers explicitly welcome (ChatGPT/Copilot retrieval
+// feeds off Bing; AI referrals convert ~9x organic per the July 2026 research),
+// plus an llms.txt digest that answers the core questions standalone.
+await writeFile(path.join(DIST, 'robots.txt'), robotsTxt(base));
+await writeFile(path.join(DIST, 'llms.txt'), llmsTxt(config, today));
 
 if (config.adsensePublisherId) {
   const pub = config.adsensePublisherId.replace(/^ca-/, '');
