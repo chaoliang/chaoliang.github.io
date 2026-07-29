@@ -2,6 +2,7 @@ import { addDays, formatMedium, formatISO } from '../lib/dates.js';
 import { page, faqBlock, linksGrid, prose, adSlot, esc, webAppSchema } from '../lib/html.js';
 import { orgSchema } from '../lib/geo.js';
 import { POPULAR_N } from './days-from-today.js';
+import { GUIDE_INDEX } from './guides.js';
 import { EVENTS, nextOccurrence } from '../lib/holidays.js';
 
 export function homePage(config, today, buildDate) {
@@ -22,14 +23,29 @@ export function homePage(config, today, buildDate) {
       `<a class="chip" href="/days-until/${e.slug}/" data-calc="until" data-target="${formatISO(next.date)}"><span data-fact="count">${next.days}</span>d · ${esc(e.name)}</a>`)
     .join('\n');
 
+  const guides = GUIDE_INDEX().slice(0, 8).map((g) =>
+    `<a class="guide-card" href="/guides/${g.slug}/">
+      <h3>${esc(g.title)}</h3>
+      <p>${esc(g.description)}</p>
+    </a>`).join('\n');
+
   const content = `
 <section class="hero">
-  <h1>Count days like<br>you mean it.</h1>
-  <p class="lede">Exact answers for “what date is 30 days from today”, business-day deadlines,
-  and holiday countdowns. No sign-up, no off-by-one errors.</p>
+  <h1>The rules behind<br>the dates.</h1>
+  <p class="lede">How courts, banks, carriers, and contracts actually count days — explained properly,
+  with calculators that follow the same conventions.</p>
 </section>
+${prose(`<p>Deadlines are missed on conventions, not arithmetic. Does the clock start today or tomorrow?
+Do weekends count? What happens when the last day is a Saturday, or when a month is short? Different
+institutions answer differently, and the difference is often the whole dispute. ${esc(config.brand)}
+documents those conventions and computes them exactly.</p>`)}
+<h2 class="section-title">Guides</h2>
+<section class="guide-list guide-list-grid">${guides}</section>
+<p class="see-all"><a href="/guides/">All guides →</a></p>
+${adSlot(config)}
+<h2 class="section-title">Calculators</h2>
 <section class="calc-panel" aria-labelledby="calc-heading" data-widget="between">
-  <h2 id="calc-heading">Days between two dates</h2>
+  <h3 id="calc-heading">Days between two dates</h3>
   <form class="calc-form" data-role="form">
     <label>Start date <input type="date" lang="en" name="start" required value="${formatISO(today)}"></label>
     <label>End date <input type="date" lang="en" name="end" required value="${formatISO(addDays(today, 30))}"></label>
@@ -37,25 +53,19 @@ export function homePage(config, today, buildDate) {
   </form>
   <output class="calc-output" data-role="output" aria-live="polite"></output>
 </section>
-<h2 class="section-title">Days from today</h2>
 <section class="quick-grid" aria-label="Popular counts">${quick}</section>
-<p class="see-all"><a href="/days-from-today/">All counts 1–365 →</a> · <a href="/business-days-from-today/">Business days →</a> · <a href="/weeks-from-today/">Weeks →</a> · <a href="/months-from-today/">Months →</a></p>
-${adSlot(config)}
+<p class="see-all"><a href="/days-from-today/">Days from today →</a> · <a href="/business-days-from-today/">Business days →</a> · <a href="/weeks-from-today/">Weeks →</a> · <a href="/months-from-today/">Months →</a> · <a href="/days-between/">Days between →</a> · <a href="/age-calculator/">Age →</a></p>
 <h2 class="section-title">Coming up</h2>
 <div class="chip-grid">${countdowns}</div>
-<p class="see-all"><a href="/days-until/">All countdowns →</a></p>
-${prose(`<p><strong>${esc(config.brand)}</strong> exists because date arithmetic fails at the worst moments —
-missed return windows, visa overstays, late filings. Every calculator here uses the same conventions as
-courts and banks: today is day zero, calendar counts include weekends, business-day counts skip them.
-Start with the <a href="/guides/">guides</a> if you want the rules behind the numbers.</p>`)}`;
+<p class="see-all"><a href="/days-until/">All countdowns →</a></p>`;
 
   return {
     path: '/',
     html: page({
       config,
       path: '/',
-      title: `${config.brand} – Days From Today, Business Days & Countdown Calculators`,
-      description: 'Free date calculators: what date is N days from today, business days from today, days between dates, age calculator, and live holiday countdowns.',
+      title: `${config.brand} – How Deadlines Are Counted, Explained & Calculated`,
+      description: 'Guides to how courts, banks, carriers, and contracts count days — plus calculators that follow the same conventions. Business days, notice periods, deadlines.',
       content,
       buildDate,
       schema: [orgSchema(config), webAppSchema(config, '/', 'Date calculator suite',
